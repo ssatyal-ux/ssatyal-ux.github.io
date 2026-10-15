@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shubhanga Satyal | Portfolio</title>
+  <meta name="description"
+        content="Shubhanga Satyal's portfolio of urban planning, housing research, and spatial analysis.">
+
+  <style>
+    :root {
+      --paper: #f7f6f2;
+      --ink: #202620;
+      --muted: #62695f;
+      --line: #d5d9cf;
+      --green: #315c43;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+    a:focus-visible, summary:focus-visible {
+      outline: 3px solid var(--green);
+      outline-offset: 6px;
+    }
+
+    header, main, footer {
+      width: min(1160px, 90%);
+      margin: auto;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 28px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .name {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-decoration: none;
+    }
+
+    nav { display: flex; gap: 26px; }
+    nav a { font-size: 14px; text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+
+    .hero { padding: 100px 0 88px; }
+    .eyebrow {
+      color: var(--green);
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 950px;
+      margin: 24px 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(46px, 7.5vw, 92px);
+      font-weight: 400;
+      line-height: 1.08;
+      letter-spacing: -.045em;
+    }
+
+    .intro {
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 20px;
+      padding: 20px 0;
+      border-top: 1px solid var(--ink);
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .section-heading span { color: var(--muted); font-size: 13px; }
+
+    .projects {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px 30px;
+      padding: 12px 0 90px;
+    }
+
+    .cover {
+      min-height: 260px;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .cover small {
+      font-size: 11px;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .cover strong {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 400;
+      line-height: 1.12;
+      letter-spacing: -.03em;
+    }
+
+    .sage { background: #dce5d6; }
+    .sand { background: #e9ddcd; }
+    .blue { background: #dce4e9; }
+    .rose { background: #eadbd4; }
+
+    .tags {
+      margin: 20px 0 8px;
+      color: var(--green);
+      font-size: 11px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    article h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
+    article p { color: var(--muted); margin: 0 0 16px; }
+    .project-link { font-size: 14px; text-underline-offset: 5px; }
+
+    details { font-size: 14px; }
+    summary { cursor: pointer; text-underline-offset: 5px; }
+    details[open] summary { margin-bottom: 12px; }
+    details p { margin-top: 12px; }
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 40px;
+      padding: 48px 0 90px;
+      border-top: 1px solid var(--ink);
+    }
+
+    .about h2 {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;
+      font-weight: 400;
+    }
+
+    .about p { margin: 0 0 20px; max-width: 680px; }
+    .about .secondary { color: var(--muted); }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      border-top: 1px solid var(--line);
+      padding: 24px 0 36px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    section { scroll-margin-top: 24px; }
+
+    @media (max-width: 650px) {
+      header { align-items: flex-start; flex-direction: column; gap: 12px; }
+      .hero { padding: 64px 0; }
+      .projects, .about { grid-template-columns: 1fr; }
+      .projects { gap: 40px; }
+      .cover { min-height: 240px; }
+      .about { gap: 20px; }
+      .section-heading span { display: none; }
+      footer { flex-direction: column; gap: 6px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+
+<body id="top">
+  <header>
+    <a class="name" href="#top">SHUBHANGA SATYAL</a>
+    <nav aria-label="Main navigation">
+      <a href="#work">Work</a>
+      <a href="#research">Research</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="intro-title">
+      <div class="eyebrow">Urban planning · Housing · Spatial analysis</div>
+      <h1 id="intro-title">Understanding cities.<br>Exploring possibilities.</h1>
+      <p class="intro">
+        I'm Shubhanga, a Master of City Planning student at the
+        University of Pennsylvania. My work explores housing,
+        urban inequality, and the ways data can inform planning.
+      </p>
+    </section>
+
+    <section id="work" aria-labelledby="work-title">
+      <div class="section-heading">
+        <h2 id="work-title">Selected work</h2>
+        <span>Maps, analysis, and research</span>
+      </div>
+
+      <div class="projects">
+        <article>
+          <div class="cover sage">
+            <small>01 / Interactive story map</small>
+            <strong>Where could<br>Philadelphia build<br>affordable housing?</strong>
+          </div>
+          <div class="tags">Housing · GIS · JavaScript</div>
+          <h3>Finding opportunities for affordable housing</h3>
+          <p>
+            An interactive exploration of Philadelphia's housing
+            markets, subsidized housing, and vacant land, moving
+            from citywide patterns to a neighborhood and parcel.
+          </p>
+          <a class="project-link" href="/story-map-project/">
+            Explore the story map ↗
+          </a>
+        </article>
+
+        <article id="research">
+          <div class="cover sand">
+            <small>02 / Master's thesis · Ongoing</small>
+            <strong>Housing.<br>Migration.<br>Dignity.</strong>
+          </div>
+          <div class="tags">Dubai &amp; Doha · Housing · Oral history</div>
+          <h3>Nepali migrant workers and the city</h3>
+          <p>
+            Research on housing conditions, spatial inequality,
+            and the lived experiences of Nepali migrant workers
+            in Dubai and Doha.
+          </p>
+          <details>
+            <summary>Read the research overview</summary>
+            <p>
+              This ongoing thesis examines accommodation conditions,
+              where worker housing is located, and how those
+              environments shape everyday life and dignity.
+              The planned approach combines oral histories with
+              returnee workers, institutional perspectives, and
+              literature and policy analysis.
+            </p>
+          </details>
+        </article>
+
+        <article>
+          <div class="cover blue">
+            <small>03 / Quantitative analysis</small>
+            <strong>Reading the<br>housing market.</strong>
+          </div>
+          <div class="tags">Statistical modeling · Spatial analysis</div>
+          <h3>Analyzing Philadelphia home sale prices</h3>
+          <p>
+            A modeling project exploring relationships between
+            property characteristics, location, and home sale
+            prices in Philadelphia.
+          </p>
+          <details>
+            <summary>Read the project overview</summary>
+            <p>
+              The work brings together data cleaning, feature
+              engineering, spatial analysis, and linear modeling
+              to examine patterns in residential property prices.
+            </p>
+          </details>
+        </article>
+
+        <article>
+          <div class="cover rose">
+            <small>04 / Urban forecasting</small>
+            <strong>A changing city.<br>Future needs.</strong>
+          </div>
+          <div class="tags">Population · Employment · Housing demand</div>
+          <h3>Exploring Philadelphia's future housing needs</h3>
+          <p>
+            An examination of population and employment trends
+            and their implications for housing demand.
+          </p>
+          <details>
+            <summary>Read the project overview</summary>
+            <p>
+              This work uses cohort-survival and trend methods,
+              alongside shift-share and location quotient analysis,
+              to explore demographic and economic change.
+            </p>
+          </details>
+        </article>
+      </div>
+    </section>
+
+    <section class="about" id="about" aria-labelledby="about-title">
+      <h2 id="about-title">A little about me.</h2>
+      <div>
+        <p>
+          I'm from Nepal and currently pursuing a Master of City
+          Planning at the University of Pennsylvania's Weitzman
+          School of Design. My interests connect affordable
+          housing, real estate, urban inequality, and spatial
+          data analysis.
+        </p>
+        <p class="secondary">
+          My background in economics and business informs how
+          I approach cities: through the relationships between
+          people, places, institutions, and investment.
+        </p>
+        <a class="project-link" href="https://github.com/ssatyal-ux">
+          Find my work on GitHub ↗
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© 2026 Shubhanga Satyal</span>
+    <span>Philadelphia · Nepal</span>
+  </footer>
+</body>
+</html>
